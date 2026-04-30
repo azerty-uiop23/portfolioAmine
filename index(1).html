@@ -1,0 +1,968 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Amine</title>
+    <meta name="keywords" content="Portfolio,Stage,BTS,BTS SIO,BTS SIO SISR,SIO,SISR,BTSSIO,amine,cyber-sécurité,Réseau,Sécurité,informatique,Rive-de-Gier,George Brassens">
+    <meta name="description" content="Portfolio - Amine (BTS SIO SISR). Bienvenue sur mon PortFolio.">
+    <meta name="author" content="Amine">
+    <link rel="icon" href="images/logo-web-component.webp">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/Header.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/Acceuil.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/Footer.css" media="all">
+
+    <script type="module" src="js/ionicons.esm.js"></script>
+    <script nomodule="" src="js/ionicons.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery-3.7.1.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* ===== GLOBAL ===== */
+        .cert-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 90px; height: 90px; border-radius: 12px;
+            font-weight: bold; font-size: 12px; text-align: center; color: #fff; padding: 8px;
+        }
+        .cert-anssi { background: linear-gradient(135deg, #003189, #0055c8); }
+        .cert-cnil  { background: linear-gradient(135deg, #005EB8, #0082CC); }
+        .cert-pix   { background: linear-gradient(135deg, #4A1583, #7B2FBE); }
+
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+
+        /* ===== STAGE ===== */
+        :root {
+            --cti-blue:   #1a3a5c;
+            --cti-accent: #00aaff;
+            --cti-light:  #e8f4fd;
+            --card-radius: 14px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.10);
+        }
+        .stage-hero {
+            background: linear-gradient(135deg, #0d1f35 0%, #1a3a5c 50%, #0077b6 100%);
+            padding: 60px 40px 50px;
+            display: flex; flex-direction: column; align-items: center; gap: 20px;
+            position: relative; overflow: hidden;
+        }
+        .stage-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300aaff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .stage-hero-logo {
+            z-index: 1; background: white; border-radius: 20px; padding: 18px 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 16px;
+        }
+        .stage-hero-logo svg { display: block; }
+        .stage-hero-logo-text { display: flex; flex-direction: column; }
+        .stage-hero-logo-text span:first-child {
+            font-size: 1.9rem; font-weight: 900; color: #1a3a5c; letter-spacing: 3px; line-height: 1;
+        }
+        .stage-hero-logo-text span:last-child {
+            font-size: 0.68rem; color: #666; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px;
+        }
+        .stage-hero h1 { z-index:1; color:white; font-size:1.7rem; text-align:center; margin:0; font-weight:700; }
+        .stage-hero p  { z-index:1; color:rgba(255,255,255,0.75); font-size:0.95rem; text-align:center; margin:0; }
+        .stage-pills { z-index:1; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+        .stage-pill {
+            background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25);
+            color:white; border-radius:30px; padding:5px 16px; font-size:0.82rem;
+            display:flex; align-items:center; gap:6px;
+        }
+        .stage-pill span { font-size:1rem; }
+        .stage-info-row {
+            display:flex; flex-wrap:wrap; gap:16px; padding:30px 40px 0; justify-content:center;
+        }
+        .stage-info-card {
+            background:white; border-radius:var(--card-radius); box-shadow:var(--shadow);
+            padding:22px 28px; display:flex; align-items:center; gap:16px;
+            flex:1 1 200px; max-width:260px; border-left:4px solid var(--cti-accent);
+        }
+        .stage-info-card .ic-icon { font-size:1.8rem; min-width:40px; text-align:center; }
+        .stage-info-card .ic-label { font-size:0.72rem; color:#999; text-transform:uppercase; letter-spacing:1px; margin-bottom:3px; }
+        .stage-info-card .ic-value { font-size:0.95rem; font-weight:700; color:#1a3a5c; }
+        .stage-section { padding:40px 40px 0; max-width:1000px; margin:0 auto; }
+        .stage-section-title { display:flex; align-items:center; gap:12px; margin-bottom:24px; }
+        .stage-section-title .sst-icon {
+            width:42px; height:42px; background:var(--cti-blue); border-radius:10px;
+            display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
+        }
+        .stage-section-title h2 { font-size:1.3rem; font-weight:800; color:#1a3a5c; margin:0; }
+        .stage-section-title .sst-line {
+            flex:1; height:2px; background:linear-gradient(to right, var(--cti-accent), transparent); border-radius:2px;
+        }
+        .stage-entreprise-block {
+            background:var(--cti-light); border-radius:var(--card-radius); padding:28px;
+            display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;
+        }
+        .stage-entreprise-block p { color:#444; line-height:1.8; margin:0; flex:1 1 300px; }
+        .stage-entreprise-block p em { color:var(--cti-blue); font-style:normal; font-weight:600; }
+        .stage-missions-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:18px; }
+        .mission-card {
+            background:white; border-radius:var(--card-radius); box-shadow:var(--shadow);
+            padding:24px; position:relative; transition:transform 0.2s, box-shadow 0.2s;
+            border-top:4px solid transparent;
+        }
+        .mission-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,0.14); }
+        .mission-card.done { border-top-color:#4caf50; }
+        .mission-card.wip  { border-top-color:#ff9800; }
+        .mission-card.todo { border-top-color:#b0bec5; }
+        .mission-card .mc-badge {
+            display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:700;
+            text-transform:uppercase; letter-spacing:1px; border-radius:20px; padding:3px 12px; margin-bottom:14px;
+        }
+        .mission-card.done .mc-badge { background:#e8f5e9; color:#2e7d32; }
+        .mission-card.wip  .mc-badge { background:#fff3e0; color:#e65100; }
+        .mission-card.todo .mc-badge { background:#eceff1; color:#607d8b; }
+        .mission-card .mc-number {
+            position:absolute; top:20px; right:20px; width:32px; height:32px; border-radius:50%;
+            background:var(--cti-light); color:var(--cti-blue); font-weight:900; font-size:0.85rem;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .mission-card h3 { font-size:1rem; font-weight:700; color:#1a3a5c; margin:0 0 10px; }
+        .mission-card p  { font-size:0.85rem; color:#888; margin:0; line-height:1.6; font-style:italic; }
+        .mission-card .mc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
+        .mc-tag { background:var(--cti-light); color:var(--cti-blue); border-radius:6px; padding:2px 10px; font-size:0.72rem; font-weight:600; }
+        .skills-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:14px; }
+        .skill-item { background:white; border-radius:10px; box-shadow:var(--shadow); padding:18px 20px; display:flex; align-items:center; gap:14px; }
+        .skill-icon { font-size:1.5rem; min-width:32px; text-align:center; }
+        .skill-label { font-size:0.88rem; font-weight:600; color:#333; }
+        .skill-level { margin-top:5px; height:5px; background:#e0e0e0; border-radius:5px; overflow:hidden; }
+        .skill-level div { height:100%; background:linear-gradient(to right, var(--cti-accent), var(--cti-blue)); border-radius:5px; width:0%; transition:width 1s ease; }
+        .skill-item .sk-right { flex:1; }
+        .docs-row { display:flex; flex-wrap:wrap; gap:16px; }
+        .doc-card {
+            background:white; border-radius:var(--card-radius); box-shadow:var(--shadow);
+            padding:22px 26px; display:flex; align-items:center; gap:18px;
+            flex:1 1 230px; text-decoration:none; transition:transform 0.2s;
+        }
+        .doc-card:hover { transform:translateY(-3px); }
+        .doc-card .doc-icon {
+            width:48px; height:48px; border-radius:12px; background:var(--cti-light);
+            display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;
+        }
+        .doc-card .doc-name { font-size:0.92rem; font-weight:700; color:#1a3a5c; }
+        .doc-card .doc-sub  { font-size:0.75rem; color:#999; margin-top:3px; }
+        .doc-card.locked .doc-name { color:#aaa; }
+        .doc-card.locked .doc-icon { opacity:0.5; }
+        .stage-footer-spacer { height:60px; }
+
+        /* ===== VEILLE ===== */
+        :root {
+            --vt-purple: #4a1583;
+            --vt-accent: #9c27b0;
+            --vt-light:  #f3e5f5;
+            --vt-dark:   #1a0a2e;
+        }
+        .veille-hero {
+            background: linear-gradient(135deg, #0d0620 0%, #1a0a2e 40%, #3a0a6e 100%);
+            padding: 60px 40px 50px;
+            display: flex; flex-direction: column; align-items: center; gap: 20px;
+            position: relative; overflow: hidden;
+        }
+        .veille-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Ccircle cx='40' cy='40' r='1' fill='%239c27b0' fill-opacity='0.15'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%239c27b0' fill-opacity='0.15'/%3E%3Ccircle cx='80' cy='0' r='1' fill='%239c27b0' fill-opacity='0.15'/%3E%3Ccircle cx='0' cy='80' r='1' fill='%239c27b0' fill-opacity='0.15'/%3E%3Ccircle cx='80' cy='80' r='1' fill='%239c27b0' fill-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .veille-icon-badge {
+            z-index:1; width:80px; height:80px; border-radius:20px;
+            background:linear-gradient(135deg, #9c27b0, #4a1583);
+            display:flex; align-items:center; justify-content:center;
+            font-size:2.5rem; box-shadow:0 8px 30px rgba(156,39,176,0.4);
+        }
+        .veille-hero h1 { z-index:1; color:white; font-size:2rem; font-weight:900; text-align:center; margin:0; }
+        .veille-hero h1 span { color:#ce93d8; }
+        .veille-hero p  { z-index:1; color:rgba(255,255,255,0.7); font-size:0.95rem; text-align:center; margin:0; max-width:600px; }
+        .veille-pills { z-index:1; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+        .veille-pill {
+            background:rgba(156,39,176,0.2); border:1px solid rgba(156,39,176,0.4);
+            color:#ce93d8; border-radius:30px; padding:5px 16px; font-size:0.82rem;
+            display:flex; align-items:center; gap:6px;
+        }
+
+        /* Timeline / sections veille */
+        .veille-body { max-width:1000px; margin:0 auto; padding:0 40px; }
+
+        .veille-section { margin-top:50px; }
+        .veille-section-title {
+            display:flex; align-items:center; gap:12px; margin-bottom:24px;
+            border-bottom:2px solid var(--vt-light); padding-bottom:14px;
+        }
+        .veille-section-title .vst-icon {
+            width:42px; height:42px; border-radius:10px;
+            background:linear-gradient(135deg, #9c27b0, #4a1583);
+            display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
+        }
+        .veille-section-title h2 { font-size:1.25rem; font-weight:800; color:#1a0a2e; margin:0; }
+
+        /* Carte intro */
+        .veille-intro-card {
+            background:var(--vt-light); border-radius:14px; padding:28px;
+            border-left:5px solid var(--vt-accent); line-height:1.8; color:#333; font-size:0.95rem;
+        }
+        .veille-intro-card strong { color:#4a1583; }
+
+        /* Alert "harvest now" */
+        .veille-alert {
+            background:linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border:1.5px solid #ff9800; border-radius:12px;
+            padding:20px 24px; display:flex; gap:16px; align-items:flex-start; margin-top:20px;
+        }
+        .veille-alert .va-icon { font-size:1.8rem; flex-shrink:0; }
+        .veille-alert p { margin:0; font-size:0.9rem; color:#5d3a00; line-height:1.7; }
+        .veille-alert strong { color:#e65100; }
+
+        /* Cards algorithmes */
+        .algo-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:18px; }
+        .algo-card {
+            background:white; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.09);
+            padding:24px; border-top:4px solid;
+            transition:transform 0.2s, box-shadow 0.2s;
+        }
+        .algo-card:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.13); }
+        .algo-card.kyber    { border-top-color:#2196f3; }
+        .algo-card.dilith   { border-top-color:#4caf50; }
+        .algo-card.falcon   { border-top-color:#ff5722; }
+        .algo-card.sphincs  { border-top-color:#9c27b0; }
+        .algo-card .ac-badge {
+            display:inline-block; border-radius:6px; padding:3px 10px;
+            font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;
+        }
+        .algo-card.kyber   .ac-badge { background:#e3f2fd; color:#1565c0; }
+        .algo-card.dilith  .ac-badge { background:#e8f5e9; color:#2e7d32; }
+        .algo-card.falcon  .ac-badge { background:#fbe9e7; color:#bf360c; }
+        .algo-card.sphincs .ac-badge { background:#f3e5f5; color:#6a1b9a; }
+        .algo-card h3 { font-size:1rem; font-weight:800; color:#1a0a2e; margin:0 0 6px; }
+        .algo-card .ac-name { font-size:0.78rem; color:#999; margin-bottom:12px; }
+        .algo-card p { font-size:0.83rem; color:#555; line-height:1.6; margin:0; }
+        .algo-card .ac-basis {
+            margin-top:14px; display:inline-flex; align-items:center; gap:6px;
+            background:#f5f5f5; border-radius:8px; padding:4px 12px;
+            font-size:0.75rem; color:#666; font-weight:600;
+        }
+
+        /* Timeline chrono */
+        .veille-timeline { position:relative; padding-left:30px; }
+        .veille-timeline::before {
+            content:''; position:absolute; left:10px; top:0; bottom:0;
+            width:2px; background:linear-gradient(to bottom, #9c27b0, #e1bee7);
+        }
+        .vt-item { position:relative; margin-bottom:28px; }
+        .vt-item::before {
+            content:''; position:absolute; left:-24px; top:6px;
+            width:12px; height:12px; border-radius:50%;
+            background:var(--vt-accent); border:2px solid white;
+            box-shadow:0 0 0 2px var(--vt-accent);
+        }
+        .vt-item .vt-year {
+            font-size:0.72rem; font-weight:800; color:var(--vt-accent);
+            text-transform:uppercase; letter-spacing:2px; margin-bottom:4px;
+        }
+        .vt-item .vt-text { font-size:0.88rem; color:#444; line-height:1.7; }
+        .vt-item .vt-text strong { color:#1a0a2e; }
+
+        /* Enjeux cards */
+        .enjeux-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:16px; }
+        .enjeu-card {
+            background:white; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08);
+            padding:22px; text-align:center;
+        }
+        .enjeu-card .ej-icon { font-size:2rem; margin-bottom:10px; }
+        .enjeu-card h4 { font-size:0.92rem; font-weight:800; color:#1a0a2e; margin:0 0 8px; }
+        .enjeu-card p  { font-size:0.8rem; color:#666; line-height:1.6; margin:0; }
+
+        /* Sources */
+        .sources-list { display:flex; flex-direction:column; gap:10px; }
+        .source-item {
+            background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.07);
+            padding:14px 20px; display:flex; align-items:center; gap:14px;
+            text-decoration:none; transition:transform 0.15s;
+        }
+        .source-item:hover { transform:translateX(4px); }
+        .source-item .src-icon {
+            width:36px; height:36px; border-radius:8px;
+            background:var(--vt-light); display:flex; align-items:center; justify-content:center;
+            font-size:1.1rem; flex-shrink:0;
+        }
+        .source-item .src-name { font-size:0.88rem; font-weight:700; color:#1a0a2e; }
+        .source-item .src-desc { font-size:0.75rem; color:#999; margin-top:2px; }
+
+        .veille-footer-spacer { height:60px; }
+
+        @media(max-width:600px) {
+            .veille-hero, .stage-hero { padding:40px 20px 36px; }
+            .veille-body, .stage-section, .stage-info-row { padding-left:16px; padding-right:16px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="navigation">
+        <div class="menu-toggle"></div>
+        <ul class="list">
+            <li class="list-item" style="--color:#67B3E4">
+                <a href="#" onclick="showPage('home'); return false;">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li class="list-item" style="--color:#ffa117">
+                <a href="#" onclick="showPage('stage'); return false;">
+                    <span class="icon"><ion-icon name="layers-outline"></ion-icon></span>
+                    <span class="text">Stage</span>
+                </a>
+            </li>
+            <li class="list-item" style="--color:#2196f3">
+                <a href="#" onclick="showPage('veille'); return false;">
+                    <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
+                    <span class="text">Veille Technologique</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- ===================== PAGE HOME ===================== -->
+<div id="page-home" class="page-section active">
+
+    <section class="Presentation">
+        <section class="Titre">
+            <h1 class="Titre1"> Bonjour <br></h1>
+            <hr class="HRnormal">
+            <h1 class="Titre2"> Je m'appelle Amine <br></h1>
+            <h1 class="Titre3"> Actuellement en BTS SIO SISR à Rive-de-Gier</h1>
+        </section>
+        <section class="IMG_Etudiant">
+            <img src="images/Hand-coding-bro.png" alt="IMG_Etudiant_Informatique" width="400px">
+        </section>
+    </section>
+
+    <a href="#TitrePresentation">
+        <div class="scrolldown">
+            <div class="chevrons">
+                <div class="chevrondown"></div>
+                <div class="chevrondown"></div>
+            </div>
+        </div>
+    </a>
+
+    <section class="Presentation2">
+        <section class="IMG_Etudiant">
+            <img src="images/Website-Creator-bro.png" alt="IMG_Etudiant_Projet" width="400px" id="IMG_Etudiant">
+        </section>
+        <section class="Description">
+            <section class="TitrePresentation">
+                <h1 class="TitrePresentation" id="TitrePresentation">Présentation</h1>
+            </section>
+            <section class="TitrePresentation"><hr></section>
+            <section class="TitrePresentation">
+                <p>
+                    Passionné par l'informatique et attiré par les réseaux,<br>
+                    je suis actuellement en <strong>BTS SIO option SISR</strong><br>
+                    au lycée George Brassens à Rive-de-Gier.<br>
+                    Je souhaite me spécialiser dans les domaines des <strong>Réseaux et de la Sécurité informatique.</strong><br>
+                    <a href="documents/CV.pdf" target="_blank" rel="noreferrer" id="CV">
+                        <button class="boutons">Mon CV</button>
+                    </a>
+                </p>
+            </section>
+        </section>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+        <section>
+            <section class="TitrePresentation" id="Certifications">
+                <h1 class="TitrePresentation">Certifications</h1>
+            </section>
+            <section class="TitrePresentation"><hr></section>
+        </section>
+        <section class="Certifications">
+            <div class="certification">
+                <div class="certification_image">
+                    <img src="images/SecNumAcad├®mie.png" alt="Logo Anssi SecNumAcadémie" width="100"
+                         onerror="this.onerror=null;this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\'cert-badge cert-anssi\'>SecNum<br>Académie</div>')">
+                </div>
+                <div class="certification_description">
+                    <p class="certification_titre">SecNum<wbr>Académie</p>
+                    <p>C'est un MOOC qui initie à la Cybersécurité. (Pendant le BTS SIO SISR)</p>
+                    <a href="documents/Attestation-SecNumAcadémie.pdf" target="_blank" rel="noreferrer">
+                        <button class="certification_bouton">
+                            <ion-icon class="icon" name="document-attach-outline"></ion-icon>
+                            Voir l'attestation
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="certification">
+                <div class="certification_image">
+                    <img src="images/CNIL_logo.png" alt="Logo CNIL" width="100"
+                         onerror="this.onerror=null;this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\'cert-badge cert-cnil\'>CNIL<br>RGPD</div>')">
+                </div>
+                <div class="certification_description">
+                    <p class="certification_titre">CNIL : Mooc sur la RGPD</p>
+                    <p>Le MOOC permet de sensibiliser à la protection des données. (Pendant le BTS SIO SISR)</p>
+                    <a href="documents/RGPD.pdf" target="_blank" rel="noreferrer">
+                        <button class="certification_bouton">
+                            <ion-icon class="icon" name="document-attach-outline"></ion-icon>
+                            Voir l'attestation
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="certification">
+                <div class="certification_image">
+                    <img src="images/pix.png" alt="Logo Pix" width="100"
+                         onerror="this.onerror=null;this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\'cert-badge cert-pix\'>PIX</div>')">
+                </div>
+                <div class="certification_description">
+                    <p class="certification_titre">PIX</p>
+                    <p>Pix est le service public en ligne pour évaluer ses compétences numériques. (Pendant le Lycée)</p>
+                    <a href="documents/Résultat_Parcours_Pix.pdf" target="_blank" rel="noreferrer">
+                        <button class="certification_bouton">
+                            <ion-icon class="icon" name="document-attach-outline"></ion-icon>
+                            Voir l'attestation
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Frise chronologique -->
+    <section class="frise_chronologique">
+        <br>
+        <section>
+            <section class="TitrePresentation"><h1>Mon Parcours Scolaire</h1></section>
+            <section class="TitrePresentation"><hr></section>
+        </section>
+        <br>
+        <ul class="frise">
+            <li class="carte" style="--accent-color:#1B5F8C">
+                <div class="date">2025 – Aujourd'hui</div>
+                <div class="title">BTS SIO SISR,<br>Lycée George Brassens à Rive-de-Gier</div>
+                <div class="descr">BTS Services Informatiques aux Organisations<br>option <strong>Solutions d'Infrastructure, Systèmes et Réseaux.</strong></div>
+            </li>
+            <li class="carte" style="--accent-color:#FBCA3E">
+                <div class="date">2025</div>
+                <div class="title">Baccalauréat STI2D SIN,<br>Lycée George Brassens à Rive-de-Gier</div>
+                <div class="descr">Options Système d'information &amp; Numériques.</div>
+            </li>
+            <li class="carte" style="--accent-color:#4CADAD">
+                <div class="date">2022</div>
+                <div class="title">Brevet des collèges,<br>Collège Notre Dame des Collines</div>
+                <div class="descr">Obtention du Diplôme National du Brevet.</div>
+            </li>
+        </ul>
+    </section>
+    <br><br>
+
+</div>
+<!-- FIN PAGE HOME -->
+
+<!-- ===================== PAGE STAGE ===================== -->
+<div id="page-stage" class="page-section">
+
+    <!-- HERO -->
+    <div class="stage-hero">
+        <div class="stage-hero-logo">
+            <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+                <rect width="52" height="52" rx="12" fill="#1a3a5c"/>
+                <circle cx="10" cy="26" r="4" fill="#00aaff"/>
+                <circle cx="26" cy="10" r="4" fill="#00aaff"/>
+                <circle cx="42" cy="26" r="4" fill="#00aaff"/>
+                <circle cx="26" cy="42" r="4" fill="#00aaff"/>
+                <circle cx="26" cy="26" r="5" fill="white"/>
+                <line x1="14" y1="26" x2="21" y2="26" stroke="#00aaff" stroke-width="2"/>
+                <line x1="31" y1="26" x2="38" y2="26" stroke="#00aaff" stroke-width="2"/>
+                <line x1="26" y1="14" x2="26" y2="21" stroke="#00aaff" stroke-width="2"/>
+                <line x1="26" y1="31" x2="26" y2="38" stroke="#00aaff" stroke-width="2"/>
+            </svg>
+            <div class="stage-hero-logo-text">
+                <span>CTI</span>
+                <span>Saint-Étienne · La Talaudière</span>
+            </div>
+        </div>
+        <h1>Mon Stage en BTS SIO SISR</h1>
+        <p>Centre de Traitement Informatique · Sécurité Sociale</p>
+        <div class="stage-pills">
+            <div class="stage-pill"><span>📅</span> 2025</div>
+            <div class="stage-pill"><span>📍</span> La Talaudière (42350)</div>
+            <div class="stage-pill"><span>🎓</span> BTS SIO SISR</div>
+            <div class="stage-pill"><span>💻</span> Réseaux &amp; Systèmes</div>
+        </div>
+    </div>
+
+    <!-- INFO CARDS (3 cartes, sans la carte vide) -->
+    <div class="stage-info-row">
+        <div class="stage-info-card">
+            <div class="ic-icon">🏢</div>
+            <div>
+                <div class="ic-label">Entreprise</div>
+                <div class="ic-value">CTI Saint-Étienne</div>
+            </div>
+        </div>
+        <div class="stage-info-card">
+            <div class="ic-icon">📍</div>
+            <div>
+                <div class="ic-label">Localisation</div>
+                <div class="ic-value">La Talaudière, ZAC Molina</div>
+            </div>
+        </div>
+        <div class="stage-info-card">
+            <div class="ic-icon">📆</div>
+            <div>
+                <div class="ic-label">Durée</div>
+                <div class="ic-value">7 semaines</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRÉSENTATION ENTREPRISE -->
+    <div class="stage-section" style="margin-top:36px;">
+        <div class="stage-section-title">
+            <div class="sst-icon">🏭</div>
+            <h2>Présentation de l'entreprise</h2>
+            <div class="sst-line"></div>
+        </div>
+        <div class="stage-entreprise-block">
+            <p>
+                Le <em>CTI Saint-Étienne</em> (Centre de Traitement Informatique) est l'organisme informatique
+                rattaché au <em>Régime Général de la Sécurité Sociale</em>, implanté au
+                <em>866 rue des Fraisses, ZAC Molina La Chazotte</em> à La Talaudière (42350).<br><br>
+                Créé en <em>1996</em> et fort d'une cinquantaine de collaborateurs, le CTI assure le traitement
+                et la gestion des données informatiques pour l'ensemble des branches de la Sécurité Sociale
+                (Maladie, AT/MP…) sur le territoire stéphanois.<br><br>
+                C'est dans ce cadre que j'effectue mon stage en <em>BTS SIO SISR</em>, au sein du service
+                informatique, en lien direct avec les problématiques de <em>réseaux, systèmes et sécurité</em>
+                d'un organisme public de grande envergure.
+            </p>
+        </div>
+    </div>
+
+    <!-- MES MISSIONS -->
+    <div class="stage-section" style="margin-top:44px;">
+        <div class="stage-section-title">
+            <div class="sst-icon">🎯</div>
+            <h2>Mes Missions</h2>
+            <div class="sst-line"></div>
+        </div>
+        <p style="color:#666;font-size:0.88rem;margin:0 0 22px;">
+            Chaque mission se complète au fil de l'avancement du stage.
+            <span style="display:inline-flex;align-items:center;gap:14px;margin-left:10px;">
+                <span style="background:#e8f5e9;color:#2e7d32;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">✔ Terminé</span>
+                <span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">⏳ En cours</span>
+                <span style="background:#eceff1;color:#607d8b;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">○ À venir</span>
+            </span>
+        </p>
+        <div class="stage-missions-grid">
+            <div class="mission-card todo">
+                <div class="mc-number">1</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta première mission (ex : installation de postes, configuration réseau…)</p>
+                <div class="mc-tags"><span class="mc-tag">Réseaux</span></div>
+            </div>
+            <div class="mission-card todo">
+                <div class="mc-number">2</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta deuxième mission.</p>
+                <div class="mc-tags"><span class="mc-tag">Systèmes</span></div>
+            </div>
+            <div class="mission-card todo">
+                <div class="mc-number">3</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta troisième mission.</p>
+                <div class="mc-tags"><span class="mc-tag">Sécurité</span></div>
+            </div>
+            <div class="mission-card todo">
+                <div class="mc-number">4</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta quatrième mission.</p>
+                <div class="mc-tags"><span class="mc-tag">Maintenance</span></div>
+            </div>
+            <div class="mission-card todo">
+                <div class="mc-number">5</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta cinquième mission.</p>
+                <div class="mc-tags"><span class="mc-tag">Administration</span></div>
+            </div>
+            <div class="mission-card todo">
+                <div class="mc-number">6</div>
+                <div class="mc-badge">○ À venir</div>
+                <h3>À compléter</h3>
+                <p>Décris ici ta sixième mission.</p>
+                <div class="mc-tags"><span class="mc-tag">Assistance</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="stage-section" style="margin-top:44px;">
+        <div class="stage-section-title">
+            <div class="sst-icon">🛠️</div>
+            <h2>Compétences Développées</h2>
+            <div class="sst-line"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-icon">🌐</div>
+                <div class="sk-right">
+                    <div class="skill-label">Administration Réseau</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">🖥️</div>
+                <div class="sk-right">
+                    <div class="skill-label">Systèmes (Windows / Linux)</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">🔒</div>
+                <div class="sk-right">
+                    <div class="skill-label">Sécurité Informatique</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">🛡️</div>
+                <div class="sk-right">
+                    <div class="skill-label">Firewall / VPN</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">⚙️</div>
+                <div class="sk-right">
+                    <div class="skill-label">Maintenance Matérielle</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-icon">🤝</div>
+                <div class="sk-right">
+                    <div class="skill-label">Relation Client / Support</div>
+                    <div class="skill-level"><div style="width:0%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="stage-section" style="margin-top:44px;">
+        <div class="stage-section-title">
+            <div class="sst-icon">📄</div>
+            <h2>Documents</h2>
+            <div class="sst-line"></div>
+        </div>
+        <div class="docs-row">
+            <a href="documents/convention_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
+                <div class="doc-icon">📋</div>
+                <div>
+                    <div class="doc-name">Convention de Stage</div>
+                    <div class="doc-sub">À uploader · PDF</div>
+                </div>
+            </a>
+            <a href="documents/rapport_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
+                <div class="doc-icon">📝</div>
+                <div>
+                    <div class="doc-name">Rapport de Stage</div>
+                    <div class="doc-sub">À uploader · PDF</div>
+                </div>
+            </a>
+            <a href="documents/bilan_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
+                <div class="doc-icon">📊</div>
+                <div>
+                    <div class="doc-name">Bilan de Compétences</div>
+                    <div class="doc-sub">À uploader · PDF</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="stage-footer-spacer"></div>
+</div>
+<!-- FIN PAGE STAGE -->
+
+<!-- ===================== PAGE VEILLE ===================== -->
+<div id="page-veille" class="page-section">
+
+    <!-- HERO -->
+    <div class="veille-hero">
+        <div class="veille-icon-badge">🔐</div>
+        <h1>La <span>Cryptographie</span><br>Post-Quantique</h1>
+        <p>Veille technologique sur les nouvelles normes de chiffrement face à la menace des ordinateurs quantiques</p>
+        <div class="veille-pills">
+            <div class="veille-pill"><span>📅</span> Mise à jour : 2025</div>
+            <div class="veille-pill"><span>🏛️</span> NIST · ANSSI</div>
+            <div class="veille-pill"><span>🔬</span> Cybersécurité</div>
+            <div class="veille-pill"><span>⚛️</span> Informatique Quantique</div>
+        </div>
+    </div>
+
+    <div class="veille-body">
+
+        <!-- 1. Introduction -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">💡</div>
+                <h2>Qu'est-ce que la cryptographie post-quantique ?</h2>
+            </div>
+            <div class="veille-intro-card">
+                La <strong>cryptographie post-quantique (PQC)</strong> désigne l'ensemble des algorithmes cryptographiques
+                conçus pour résister aux attaques d'un ordinateur quantique. Aujourd'hui, la sécurité d'Internet
+                repose sur des algorithmes comme <strong>RSA</strong> ou <strong>ECC</strong> (courbes elliptiques),
+                dont la robustesse s'appuie sur la difficulté de factoriser de grands nombres ou de résoudre des
+                problèmes mathématiques complexes.<br><br>
+                Or, un ordinateur quantique suffisamment puissant pourrait utiliser l'<strong>algorithme de Shor</strong>
+                pour briser RSA-2048 en quelques heures, là où un supercalculateur actuel mettrait des
+                <strong>milliards d'années</strong>. La cryptographie post-quantique vise donc à remplacer ces
+                algorithmes par de nouveaux, résistants à cette puissance de calcul.
+            </div>
+            <div class="veille-alert">
+                <div class="va-icon">⚠️</div>
+                <p>
+                    <strong>Menace « Harvest Now, Decrypt Later » :</strong> des acteurs malveillants collectent
+                    dès aujourd'hui des données chiffrées pour les déchiffrer plus tard, une fois les ordinateurs
+                    quantiques disponibles. Les données sensibles chiffrées aujourd'hui (santé, banque, défense)
+                    sont donc déjà potentiellement en danger à long terme.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. Algorithmes NIST -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">🧮</div>
+                <h2>Les 4 algorithmes standardisés par le NIST (août 2024)</h2>
+            </div>
+            <p style="color:#555;font-size:0.88rem;margin:0 0 20px;line-height:1.7;">
+                Après un processus lancé en 2016 ayant évalué 82 candidats, le NIST (agence américaine des normes)
+                a officiellement publié 4 algorithmes post-quantiques en août 2024.
+            </p>
+            <div class="algo-grid">
+                <div class="algo-card kyber">
+                    <div class="ac-badge">Chiffrement</div>
+                    <h3>ML-KEM</h3>
+                    <div class="ac-name">anciennement CRYSTALS-Kyber</div>
+                    <p>Algorithme d'encapsulation de clés. Utilisé pour sécuriser les échanges sur un réseau public, comme HTTPS.</p>
+                    <div class="ac-basis">📐 Réseaux euclidiens (LWE)</div>
+                </div>
+                <div class="algo-card dilith">
+                    <div class="ac-badge">Signature</div>
+                    <h3>ML-DSA</h3>
+                    <div class="ac-name">anciennement CRYSTALS-Dilithium</div>
+                    <p>Algorithme de signature numérique. Permet de vérifier l'authenticité et l'intégrité d'un document ou message.</p>
+                    <div class="ac-basis">📐 Réseaux euclidiens (MLWE)</div>
+                </div>
+                <div class="algo-card falcon">
+                    <div class="ac-badge">Signature</div>
+                    <h3>FN-DSA</h3>
+                    <div class="ac-name">anciennement FALCON</div>
+                    <p>Signature numérique compacte, adaptée aux environnements contraints (IoT, cartes à puce).</p>
+                    <div class="ac-basis">📐 Réseaux NTRU</div>
+                </div>
+                <div class="algo-card sphincs">
+                    <div class="ac-badge">Signature</div>
+                    <h3>SLH-DSA</h3>
+                    <div class="ac-name">anciennement SPHINCS+</div>
+                    <p>Signature basée uniquement sur des fonctions de hachage, sans hypothèse sur les réseaux.</p>
+                    <div class="ac-basis">🔁 Fonctions de hachage</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Chronologie -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">📅</div>
+                <h2>Chronologie des événements clés</h2>
+            </div>
+            <div class="veille-timeline">
+                <div class="vt-item">
+                    <div class="vt-year">2016</div>
+                    <div class="vt-text">Le <strong>NIST lance un appel à candidatures</strong> mondial pour des algorithmes cryptographiques post-quantiques. 82 propositions reçues.</div>
+                </div>
+                <div class="vt-item">
+                    <div class="vt-year">2019 – 2021</div>
+                    <div class="vt-text">Plusieurs tours d'évaluation. Les candidats sont progressivement éliminés. Certains algorithmes sont cassés (ex. SIKE en 2022 par un simple PC).</div>
+                </div>
+                <div class="vt-item">
+                    <div class="vt-year">Juillet 2022</div>
+                    <div class="vt-text">Le NIST annonce <strong>4 finalistes</strong> : CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON et SPHINCS+.</div>
+                </div>
+                <div class="vt-item">
+                    <div class="vt-year">Août 2024</div>
+                    <div class="vt-text">Publication officielle des <strong>premiers standards de cryptographie post-quantique</strong> : ML-KEM, ML-DSA, FN-DSA et SLH-DSA. Étape historique pour la cybersécurité mondiale.</div>
+                </div>
+                <div class="vt-item">
+                    <div class="vt-year">2025 – aujourd'hui</div>
+                    <div class="vt-text">Les agences nationales (ANSSI en France, NSA aux USA) recommandent de <strong>préparer la migration</strong> vers ces nouveaux standards. Les entreprises doivent évaluer leur "crypto-agilité".</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Enjeux -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">🌍</div>
+                <h2>Enjeux et impacts pour les entreprises</h2>
+            </div>
+            <div class="enjeux-grid">
+                <div class="enjeu-card">
+                    <div class="ej-icon">🏦</div>
+                    <h4>Finance &amp; Banque</h4>
+                    <p>Les transactions bancaires et protocoles TLS devront migrer vers des algorithmes post-quantiques pour garantir la confidentialité.</p>
+                </div>
+                <div class="enjeu-card">
+                    <div class="ej-icon">🏥</div>
+                    <h4>Santé</h4>
+                    <p>Les données médicales, particulièrement sensibles, nécessitent une protection à très long terme face aux attaques futures.</p>
+                </div>
+                <div class="enjeu-card">
+                    <div class="ej-icon">🛡️</div>
+                    <h4>Défense &amp; État</h4>
+                    <p>Les communications gouvernementales et militaires sont déjà ciblées par des stratégies de collecte en vue d'un déchiffrement futur.</p>
+                </div>
+                <div class="enjeu-card">
+                    <div class="ej-icon">🌐</div>
+                    <h4>Internet &amp; IoT</h4>
+                    <p>HTTPS, VPN, signatures de certificats... toute l'infrastructure du web devra être mise à jour progressivement.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Lien avec SISR -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">🎓</div>
+                <h2>Lien avec ma formation BTS SIO SISR</h2>
+            </div>
+            <div class="veille-intro-card">
+                En BTS SIO option SISR, nous étudions l'administration des réseaux, la sécurité des systèmes
+                d'information et la gestion des infrastructures. La cryptographie post-quantique est directement
+                liée à ces domaines :<br><br>
+                • Les <strong>protocoles TLS/HTTPS</strong> que l'on configure sur les serveurs devront intégrer les
+                nouveaux algorithmes post-quantiques.<br>
+                • Les <strong>VPN et tunnels chiffrés</strong> seront impactés : les algorithmes d'échange de clés
+                (comme Diffie-Hellman) sont vulnérables aux ordinateurs quantiques.<br>
+                • La <strong>gestion des certificats PKI</strong> devra évoluer pour supporter ML-DSA ou FN-DSA
+                à la place de RSA.<br><br>
+                Anticiper ces changements dès aujourd'hui, c'est s'assurer d'être un technicien réseau et sécurité
+                compétent dans le monde de demain.
+            </div>
+        </div>
+
+        <!-- 6. Sources -->
+        <div class="veille-section">
+            <div class="veille-section-title">
+                <div class="vst-icon">📚</div>
+                <h2>Sources</h2>
+            </div>
+            <div class="sources-list">
+                <a href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" target="_blank" rel="noreferrer" class="source-item">
+                    <div class="src-icon">🏛️</div>
+                    <div>
+                        <div class="src-name">NIST — Publication officielle des standards PQC</div>
+                        <div class="src-desc">nist.gov · Août 2024</div>
+                    </div>
+                </a>
+                <a href="https://www.ssi.gouv.fr/" target="_blank" rel="noreferrer" class="source-item">
+                    <div class="src-icon">🇫🇷</div>
+                    <div>
+                        <div class="src-name">ANSSI — Agence Nationale de la Sécurité des Systèmes d'Information</div>
+                        <div class="src-desc">ssi.gouv.fr · Recommandations françaises sur la migration PQC</div>
+                    </div>
+                </a>
+                <a href="https://fr.wikipedia.org/wiki/Cryptographie_post-quantique" target="_blank" rel="noreferrer" class="source-item">
+                    <div class="src-icon">📖</div>
+                    <div>
+                        <div class="src-name">Wikipédia — Cryptographie post-quantique</div>
+                        <div class="src-desc">fr.wikipedia.org · Vue d'ensemble des algorithmes et enjeux</div>
+                    </div>
+                </a>
+                <a href="https://incyber.org/article/nist-publie-trois-algorithmes-chiffrement-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
+                    <div class="src-icon">📰</div>
+                    <div>
+                        <div class="src-name">InCyber News — Analyse des 3 algorithmes publiés</div>
+                        <div class="src-desc">incyber.org · Août 2024</div>
+                    </div>
+                </a>
+                <a href="https://hellofuture.orange.com/fr/pqc-cryptographie-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
+                    <div class="src-icon">🟠</div>
+                    <div>
+                        <div class="src-name">Orange Hello Future — PQC, anticiper la menace quantique</div>
+                        <div class="src-desc">hellofuture.orange.com · Décembre 2025</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="veille-footer-spacer"></div>
+</div>
+<!-- FIN PAGE VEILLE -->
+
+<script src="js/Scroll_Up.js"></script>
+<button onclick="topFunction()" id="myBtn" title="Go to top"></button>
+
+<footer class="footer" id="footer">
+    <div class="inner">
+        <div class="column is-logo">
+            <div class="logo">
+                <img src="images/logo-web-component-white.webp" alt="logo" width="50px">
+            </div>
+            <div class="logo-info">
+                <div class="footer_text">Amine</div>
+                <span class="copyright">© 2025. All rights reserved.</span>
+            </div>
+        </div>
+        <div class="column is-nav">
+            <div class="column-title">Navigation</div>
+            <ul>
+                <li><a href="#" onclick="showPage('home'); return false;" class="footer_a">Accueil</a></li>
+                <li><a href="#" onclick="showPage('stage'); return false;" class="footer_a">Mon Stage</a></li>
+                <li><a href="#" onclick="showPage('veille'); return false;" class="footer_a">Ma Veille</a></li>
+            </ul>
+        </div>
+        <div class="column is-nav">
+            <div class="column-title">Contact</div>
+            <ul>
+                <li><a href="mailto:" class="footer_a"><i class="fa fa-envelope-open"></i> Mon email</a></li>
+                <li><a href="https://github.com/" target="_blank" rel="noreferrer" class="footer_a"><i class="fa fa-github"></i> Mon GitHub</a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="footer_a"><i class="fa fa-linkedin"></i> Linkedin</a></li>
+            </ul>
+        </div>
+        <div class="column is-nav">
+            <div class="column-title">Informations</div>
+            <ul>
+                <li><a href="mentions_legales" class="footer_a">Mentions Légales</a></li>
+                <li><a href="#" class="footer_a">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="js/Header.js"></script>
+<script src="js/MessageRetour.js"></script>
+<script>
+    function showPage(page) {
+        document.querySelectorAll('.page-section').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        var target = document.getElementById('page-' + page);
+        if (target) target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body></html>
