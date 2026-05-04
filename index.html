@@ -99,55 +99,46 @@
         }
         .stage-entreprise-block p { color:#444; line-height:1.8; margin:0; flex:1 1 300px; }
         .stage-entreprise-block p em { color:var(--cti-blue); font-style:normal; font-weight:600; }
-        .stage-missions-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:18px; }
-        .mission-card {
-            background:white; border-radius:var(--card-radius); box-shadow:var(--shadow);
-            padding:24px; position:relative; transition:transform 0.2s, box-shadow 0.2s;
-            border-top:4px solid transparent;
-        }
-        .mission-card:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,0.14); }
-        .mission-card.done { border-top-color:#4caf50; }
-        .mission-card.wip  { border-top-color:#ff9800; }
-        .mission-card.todo { border-top-color:#b0bec5; }
-        .mission-card .mc-badge {
-            display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:700;
-            text-transform:uppercase; letter-spacing:1px; border-radius:20px; padding:3px 12px; margin-bottom:14px;
-        }
-        .mission-card.done .mc-badge { background:#e8f5e9; color:#2e7d32; }
-        .mission-card.wip  .mc-badge { background:#fff3e0; color:#e65100; }
-        .mission-card.todo .mc-badge { background:#eceff1; color:#607d8b; }
-        .mission-card .mc-number {
-            position:absolute; top:20px; right:20px; width:32px; height:32px; border-radius:50%;
-            background:var(--cti-light); color:var(--cti-blue); font-weight:900; font-size:0.85rem;
-            display:flex; align-items:center; justify-content:center;
-        }
-        .mission-card h3 { font-size:1rem; font-weight:700; color:#1a3a5c; margin:0 0 10px; }
-        .mission-card p  { font-size:0.85rem; color:#888; margin:0; line-height:1.6; font-style:italic; }
-        .mission-card .mc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:14px; }
-        .mc-tag { background:var(--cti-light); color:var(--cti-blue); border-radius:6px; padding:2px 10px; font-size:0.72rem; font-weight:600; }
-        .skills-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:14px; }
-        .skill-item { background:white; border-radius:10px; box-shadow:var(--shadow); padding:18px 20px; display:flex; align-items:center; gap:14px; }
-        .skill-icon { font-size:1.5rem; min-width:32px; text-align:center; }
-        .skill-label { font-size:0.88rem; font-weight:600; color:#333; }
-        .skill-level { margin-top:5px; height:5px; background:#e0e0e0; border-radius:5px; overflow:hidden; }
-        .skill-level div { height:100%; background:linear-gradient(to right, var(--cti-accent), var(--cti-blue)); border-radius:5px; width:0%; transition:width 1s ease; }
-        .skill-item .sk-right { flex:1; }
-        .docs-row { display:flex; flex-wrap:wrap; gap:16px; }
-        .doc-card {
-            background:white; border-radius:var(--card-radius); box-shadow:var(--shadow);
-            padding:22px 26px; display:flex; align-items:center; gap:18px;
-            flex:1 1 230px; text-decoration:none; transition:transform 0.2s;
-        }
-        .doc-card:hover { transform:translateY(-3px); }
-        .doc-card .doc-icon {
-            width:48px; height:48px; border-radius:12px; background:var(--cti-light);
-            display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;
-        }
-        .doc-card .doc-name { font-size:0.92rem; font-weight:700; color:#1a3a5c; }
-        .doc-card .doc-sub  { font-size:0.75rem; color:#999; margin-top:3px; }
-        .doc-card.locked .doc-name { color:#aaa; }
-        .doc-card.locked .doc-icon { opacity:0.5; }
         .stage-footer-spacer { height:60px; }
+
+        /* ---- Timeline semaines ---- */
+        .semaines-timeline { display:flex; flex-direction:column; gap:16px; }
+        .semaine-bloc {
+            background:white; border-radius:14px; box-shadow:0 3px 16px rgba(0,0,0,0.08);
+            overflow:hidden; border-left:5px solid #b0bec5; transition:box-shadow 0.2s;
+        }
+        .semaine-bloc:hover { box-shadow:0 6px 24px rgba(0,0,0,0.13); }
+        .semaine-bloc.done { border-left-color:#4caf50; }
+        .semaine-bloc.wip  { border-left-color:#ff9800; }
+        .semaine-bloc.todo { border-left-color:#b0bec5; }
+        .sb-header { display:flex; align-items:center; gap:18px; padding:18px 24px; }
+        .sb-num {
+            width:44px; height:44px; border-radius:12px; background:var(--cti-light);
+            color:var(--cti-blue); font-weight:900; font-size:0.95rem;
+            display:flex; align-items:center; justify-content:center; flex-shrink:0;
+        }
+        .semaine-bloc.done .sb-num { background:#e8f5e9; color:#2e7d32; }
+        .semaine-bloc.wip  .sb-num { background:#fff3e0; color:#e65100; }
+        .sb-info { flex:1; }
+        .sb-title { font-size:0.97rem; font-weight:700; color:#1a3a5c; }
+        .sb-dates { font-size:0.78rem; color:#aaa; margin-top:2px; }
+        .sb-badge { font-size:0.72rem; font-weight:700; border-radius:20px; padding:4px 14px; white-space:nowrap; }
+        .semaine-bloc.done .sb-badge { background:#e8f5e9; color:#2e7d32; }
+        .semaine-bloc.wip  .sb-badge { background:#fff3e0; color:#e65100; }
+        .semaine-bloc.todo .sb-badge { background:#eceff1; color:#607d8b; }
+        .sb-body { padding:0 24px 20px 86px; }
+        .sb-placeholder { font-size:0.85rem; color:#aaa; font-style:italic; margin:0 0 12px; line-height:1.6; }
+        .sb-tasks { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+        .sb-tasks li { font-size:0.88rem; color:#555; display:flex; align-items:flex-start; gap:10px; line-height:1.5; }
+        .sb-tasks li::before { content:'▸'; color:var(--cti-accent); flex-shrink:0; margin-top:1px; }
+        .sb-tasks li.st-empty { color:#ccc; font-style:italic; }
+        .sb-tasks li.st-empty::before { color:#ddd; }
+        .sb-tasks li.st-done { color:#555; }
+        .sb-tasks li.st-done::before { content:'✔'; color:#4caf50; }
+        @media(max-width:600px) {
+            .sb-body { padding-left:24px; }
+            .sb-header { flex-wrap:wrap; }
+        }
 
         /* ===== VEILLE ===== */
         :root {
@@ -181,99 +172,16 @@
             color:#ce93d8; border-radius:30px; padding:5px 16px; font-size:0.82rem;
             display:flex; align-items:center; gap:6px;
         }
-
-        /* Timeline / sections veille */
-        .veille-body { max-width:1000px; margin:0 auto; padding:0 40px; }
-
-        .veille-section { margin-top:50px; }
-        .veille-section-title {
-            display:flex; align-items:center; gap:12px; margin-bottom:24px;
-            border-bottom:2px solid var(--vt-light); padding-bottom:14px;
-        }
-        .veille-section-title .vst-icon {
-            width:42px; height:42px; border-radius:10px;
-            background:linear-gradient(135deg, #9c27b0, #4a1583);
-            display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
-        }
-        .veille-section-title h2 { font-size:1.25rem; font-weight:800; color:#1a0a2e; margin:0; }
-
-        /* Carte intro */
+        .veille-body { max-width:800px; margin:0 auto; padding:50px 40px 60px; }
         .veille-intro-card {
-            background:var(--vt-light); border-radius:14px; padding:28px;
-            border-left:5px solid var(--vt-accent); line-height:1.8; color:#333; font-size:0.95rem;
+            background:var(--vt-light); border-radius:14px; padding:32px;
+            border-left:5px solid var(--vt-accent); line-height:1.9; color:#333; font-size:0.97rem;
         }
         .veille-intro-card strong { color:#4a1583; }
-
-        /* Alert "harvest now" */
-        .veille-alert {
-            background:linear-gradient(135deg, #fff3e0, #ffe0b2);
-            border:1.5px solid #ff9800; border-radius:12px;
-            padding:20px 24px; display:flex; gap:16px; align-items:flex-start; margin-top:20px;
+        .veille-sources-title {
+            font-size:0.8rem; font-weight:700; color:#aaa; text-transform:uppercase;
+            letter-spacing:2px; margin:36px 0 14px;
         }
-        .veille-alert .va-icon { font-size:1.8rem; flex-shrink:0; }
-        .veille-alert p { margin:0; font-size:0.9rem; color:#5d3a00; line-height:1.7; }
-        .veille-alert strong { color:#e65100; }
-
-        /* Cards algorithmes */
-        .algo-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:18px; }
-        .algo-card {
-            background:white; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.09);
-            padding:24px; border-top:4px solid;
-            transition:transform 0.2s, box-shadow 0.2s;
-        }
-        .algo-card:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.13); }
-        .algo-card.kyber    { border-top-color:#2196f3; }
-        .algo-card.dilith   { border-top-color:#4caf50; }
-        .algo-card.falcon   { border-top-color:#ff5722; }
-        .algo-card.sphincs  { border-top-color:#9c27b0; }
-        .algo-card .ac-badge {
-            display:inline-block; border-radius:6px; padding:3px 10px;
-            font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;
-        }
-        .algo-card.kyber   .ac-badge { background:#e3f2fd; color:#1565c0; }
-        .algo-card.dilith  .ac-badge { background:#e8f5e9; color:#2e7d32; }
-        .algo-card.falcon  .ac-badge { background:#fbe9e7; color:#bf360c; }
-        .algo-card.sphincs .ac-badge { background:#f3e5f5; color:#6a1b9a; }
-        .algo-card h3 { font-size:1rem; font-weight:800; color:#1a0a2e; margin:0 0 6px; }
-        .algo-card .ac-name { font-size:0.78rem; color:#999; margin-bottom:12px; }
-        .algo-card p { font-size:0.83rem; color:#555; line-height:1.6; margin:0; }
-        .algo-card .ac-basis {
-            margin-top:14px; display:inline-flex; align-items:center; gap:6px;
-            background:#f5f5f5; border-radius:8px; padding:4px 12px;
-            font-size:0.75rem; color:#666; font-weight:600;
-        }
-
-        /* Timeline chrono */
-        .veille-timeline { position:relative; padding-left:30px; }
-        .veille-timeline::before {
-            content:''; position:absolute; left:10px; top:0; bottom:0;
-            width:2px; background:linear-gradient(to bottom, #9c27b0, #e1bee7);
-        }
-        .vt-item { position:relative; margin-bottom:28px; }
-        .vt-item::before {
-            content:''; position:absolute; left:-24px; top:6px;
-            width:12px; height:12px; border-radius:50%;
-            background:var(--vt-accent); border:2px solid white;
-            box-shadow:0 0 0 2px var(--vt-accent);
-        }
-        .vt-item .vt-year {
-            font-size:0.72rem; font-weight:800; color:var(--vt-accent);
-            text-transform:uppercase; letter-spacing:2px; margin-bottom:4px;
-        }
-        .vt-item .vt-text { font-size:0.88rem; color:#444; line-height:1.7; }
-        .vt-item .vt-text strong { color:#1a0a2e; }
-
-        /* Enjeux cards */
-        .enjeux-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:16px; }
-        .enjeu-card {
-            background:white; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.08);
-            padding:22px; text-align:center;
-        }
-        .enjeu-card .ej-icon { font-size:2rem; margin-bottom:10px; }
-        .enjeu-card h4 { font-size:0.92rem; font-weight:800; color:#1a0a2e; margin:0 0 8px; }
-        .enjeu-card p  { font-size:0.8rem; color:#666; line-height:1.6; margin:0; }
-
-        /* Sources */
         .sources-list { display:flex; flex-direction:column; gap:10px; }
         .source-item {
             background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.07);
@@ -288,7 +196,6 @@
         }
         .source-item .src-name { font-size:0.88rem; font-weight:700; color:#1a0a2e; }
         .source-item .src-desc { font-size:0.75rem; color:#999; margin-top:2px; }
-
         .veille-footer-spacer { height:60px; }
 
         @media(max-width:600px) {
@@ -490,14 +397,14 @@
         <h1>Mon Stage en BTS SIO SISR</h1>
         <p>Centre de Traitement Informatique · Sécurité Sociale</p>
         <div class="stage-pills">
-            <div class="stage-pill"><span>📅</span> 2025</div>
+            <div class="stage-pill"><span>📅</span> 2026</div>
             <div class="stage-pill"><span>📍</span> La Talaudière (42350)</div>
             <div class="stage-pill"><span>🎓</span> BTS SIO SISR</div>
             <div class="stage-pill"><span>💻</span> Réseaux &amp; Systèmes</div>
         </div>
     </div>
 
-    <!-- INFO CARDS (3 cartes, sans la carte vide) -->
+    <!-- INFO CARDS -->
     <div class="stage-info-row">
         <div class="stage-info-card">
             <div class="ic-icon">🏢</div>
@@ -544,149 +451,150 @@
         </div>
     </div>
 
-    <!-- MES MISSIONS -->
+    <!-- DÉROULEMENT SEMAINE PAR SEMAINE -->
     <div class="stage-section" style="margin-top:44px;">
         <div class="stage-section-title">
-            <div class="sst-icon">🎯</div>
-            <h2>Mes Missions</h2>
+            <div class="sst-icon">📅</div>
+            <h2>Déroulement du Stage</h2>
             <div class="sst-line"></div>
         </div>
-        <p style="color:#666;font-size:0.88rem;margin:0 0 22px;">
-            Chaque mission se complète au fil de l'avancement du stage.
-            <span style="display:inline-flex;align-items:center;gap:14px;margin-left:10px;">
-                <span style="background:#e8f5e9;color:#2e7d32;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">✔ Terminé</span>
-                <span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">⏳ En cours</span>
+        <p style="color:#666;font-size:0.88rem;margin:0 0 28px;line-height:1.7;">
+            Chaque semaine est complétée au fur et à mesure de l'avancement du stage.
+            <span style="display:inline-flex;align-items:center;gap:12px;margin-left:10px;flex-wrap:wrap;">
+                <span style="background:#e8f5e9;color:#2e7d32;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">✔ Semaine terminée</span>
+                <span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">⏳ Semaine en cours</span>
                 <span style="background:#eceff1;color:#607d8b;border-radius:20px;padding:2px 10px;font-size:0.75rem;font-weight:700;">○ À venir</span>
             </span>
         </p>
-        <div class="stage-missions-grid">
-            <div class="mission-card todo">
-                <div class="mc-number">1</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta première mission (ex : installation de postes, configuration réseau…)</p>
-                <div class="mc-tags"><span class="mc-tag">Réseaux</span></div>
-            </div>
-            <div class="mission-card todo">
-                <div class="mc-number">2</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta deuxième mission.</p>
-                <div class="mc-tags"><span class="mc-tag">Systèmes</span></div>
-            </div>
-            <div class="mission-card todo">
-                <div class="mc-number">3</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta troisième mission.</p>
-                <div class="mc-tags"><span class="mc-tag">Sécurité</span></div>
-            </div>
-            <div class="mission-card todo">
-                <div class="mc-number">4</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta quatrième mission.</p>
-                <div class="mc-tags"><span class="mc-tag">Maintenance</span></div>
-            </div>
-            <div class="mission-card todo">
-                <div class="mc-number">5</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta cinquième mission.</p>
-                <div class="mc-tags"><span class="mc-tag">Administration</span></div>
-            </div>
-            <div class="mission-card todo">
-                <div class="mc-number">6</div>
-                <div class="mc-badge">○ À venir</div>
-                <h3>À compléter</h3>
-                <p>Décris ici ta sixième mission.</p>
-                <div class="mc-tags"><span class="mc-tag">Assistance</span></div>
-            </div>
-        </div>
-    </div>
 
-    <!-- COMPÉTENCES -->
-    <div class="stage-section" style="margin-top:44px;">
-        <div class="stage-section-title">
-            <div class="sst-icon">🛠️</div>
-            <h2>Compétences Développées</h2>
-            <div class="sst-line"></div>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-icon">🌐</div>
-                <div class="sk-right">
-                    <div class="skill-label">Administration Réseau</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">🖥️</div>
-                <div class="sk-right">
-                    <div class="skill-label">Systèmes (Windows / Linux)</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">🔒</div>
-                <div class="sk-right">
-                    <div class="skill-label">Sécurité Informatique</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">🛡️</div>
-                <div class="sk-right">
-                    <div class="skill-label">Firewall / VPN</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">⚙️</div>
-                <div class="sk-right">
-                    <div class="skill-label">Maintenance Matérielle</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon">🤝</div>
-                <div class="sk-right">
-                    <div class="skill-label">Relation Client / Support</div>
-                    <div class="skill-level"><div style="width:0%"></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="semaines-timeline">
 
-    <!-- DOCUMENTS -->
-    <div class="stage-section" style="margin-top:44px;">
-        <div class="stage-section-title">
-            <div class="sst-icon">📄</div>
-            <h2>Documents</h2>
-            <div class="sst-line"></div>
-        </div>
-        <div class="docs-row">
-            <a href="documents/convention_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
-                <div class="doc-icon">📋</div>
-                <div>
-                    <div class="doc-name">Convention de Stage</div>
-                    <div class="doc-sub">À uploader · PDF</div>
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S1</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 1 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
                 </div>
-            </a>
-            <a href="documents/rapport_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
-                <div class="doc-icon">📝</div>
-                <div>
-                    <div class="doc-name">Rapport de Stage</div>
-                    <div class="doc-sub">À uploader · PDF</div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine : accueil, découverte de l'environnement, premières tâches…</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
                 </div>
-            </a>
-            <a href="documents/bilan_stage.pdf" target="_blank" rel="noreferrer" class="doc-card locked">
-                <div class="doc-icon">📊</div>
-                <div>
-                    <div class="doc-name">Bilan de Compétences</div>
-                    <div class="doc-sub">À uploader · PDF</div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S2</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 2 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
                 </div>
-            </a>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S3</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 3 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
+                </div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S4</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 4 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
+                </div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S5</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 5 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
+                </div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S6</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 6 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
+                </div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait cette semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="semaine-bloc todo">
+                <div class="sb-header">
+                    <div class="sb-num">S7</div>
+                    <div class="sb-info">
+                        <div class="sb-title">Semaine 7 — À compléter</div>
+                        <div class="sb-dates">Du __ / __ au __ / __</div>
+                    </div>
+                    <div class="sb-badge">○ À venir</div>
+                </div>
+                <div class="sb-body">
+                    <p class="sb-placeholder">Décris ici ce que tu as fait lors de ta dernière semaine.</p>
+                    <ul class="sb-tasks">
+                        <li class="st-empty">Tâche à compléter</li>
+                        <li class="st-empty">Tâche à compléter</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="stage-footer-spacer"></div>
@@ -696,217 +604,59 @@
 <!-- ===================== PAGE VEILLE ===================== -->
 <div id="page-veille" class="page-section">
 
-    <!-- HERO -->
     <div class="veille-hero">
         <div class="veille-icon-badge">🔐</div>
         <h1>La <span>Cryptographie</span><br>Post-Quantique</h1>
-        <p>Veille technologique sur les nouvelles normes de chiffrement face à la menace des ordinateurs quantiques</p>
+        <p>Veille technologique — BTS SIO SISR</p>
         <div class="veille-pills">
-            <div class="veille-pill"><span>📅</span> Mise à jour : 2025</div>
-            <div class="veille-pill"><span>🏛️</span> NIST · ANSSI</div>
+            <div class="veille-pill"><span>📅</span> 2025</div>
             <div class="veille-pill"><span>🔬</span> Cybersécurité</div>
             <div class="veille-pill"><span>⚛️</span> Informatique Quantique</div>
         </div>
     </div>
 
     <div class="veille-body">
-
-        <!-- 1. Introduction -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">💡</div>
-                <h2>Qu'est-ce que la cryptographie post-quantique ?</h2>
-            </div>
-            <div class="veille-intro-card">
-                La <strong>cryptographie post-quantique (PQC)</strong> désigne l'ensemble des algorithmes cryptographiques
-                conçus pour résister aux attaques d'un ordinateur quantique. Aujourd'hui, la sécurité d'Internet
-                repose sur des algorithmes comme <strong>RSA</strong> ou <strong>ECC</strong> (courbes elliptiques),
-                dont la robustesse s'appuie sur la difficulté de factoriser de grands nombres ou de résoudre des
-                problèmes mathématiques complexes.<br><br>
-                Or, un ordinateur quantique suffisamment puissant pourrait utiliser l'<strong>algorithme de Shor</strong>
-                pour briser RSA-2048 en quelques heures, là où un supercalculateur actuel mettrait des
-                <strong>milliards d'années</strong>. La cryptographie post-quantique vise donc à remplacer ces
-                algorithmes par de nouveaux, résistants à cette puissance de calcul.
-            </div>
-            <div class="veille-alert">
-                <div class="va-icon">⚠️</div>
-                <p>
-                    <strong>Menace « Harvest Now, Decrypt Later » :</strong> des acteurs malveillants collectent
-                    dès aujourd'hui des données chiffrées pour les déchiffrer plus tard, une fois les ordinateurs
-                    quantiques disponibles. Les données sensibles chiffrées aujourd'hui (santé, banque, défense)
-                    sont donc déjà potentiellement en danger à long terme.
-                </p>
-            </div>
+        <div class="veille-intro-card">
+            Pour ma veille technologique, j'ai choisi de m'intéresser à la <strong>cryptographie post-quantique</strong>.
+            Ce sujet concerne la sécurité des données à l'ère des futurs ordinateurs quantiques, qui pourraient un jour
+            rendre les systèmes de chiffrement actuels — ceux qui protègent nos connexions, paiements et données personnelles
+            — beaucoup plus faciles à contourner. Des chercheurs du monde entier travaillent à concevoir de nouveaux
+            systèmes de protection capables de résister à ces nouvelles machines. En août 2024, une agence américaine
+            a officiellement validé les premiers standards de ce type. Ce sujet me passionne car il est directement lié
+            à mon domaine de formation : la <strong>sécurité des réseaux et des systèmes informatiques</strong>.
         </div>
 
-        <!-- 2. Algorithmes NIST -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">🧮</div>
-                <h2>Les 4 algorithmes standardisés par le NIST (août 2024)</h2>
-            </div>
-            <p style="color:#555;font-size:0.88rem;margin:0 0 20px;line-height:1.7;">
-                Après un processus lancé en 2016 ayant évalué 82 candidats, le NIST (agence américaine des normes)
-                a officiellement publié 4 algorithmes post-quantiques en août 2024.
-            </p>
-            <div class="algo-grid">
-                <div class="algo-card kyber">
-                    <div class="ac-badge">Chiffrement</div>
-                    <h3>ML-KEM</h3>
-                    <div class="ac-name">anciennement CRYSTALS-Kyber</div>
-                    <p>Algorithme d'encapsulation de clés. Utilisé pour sécuriser les échanges sur un réseau public, comme HTTPS.</p>
-                    <div class="ac-basis">📐 Réseaux euclidiens (LWE)</div>
+        <div class="veille-sources-title">Sources</div>
+        <div class="sources-list">
+            <a href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" target="_blank" rel="noreferrer" class="source-item">
+                <div class="src-icon">🏛️</div>
+                <div>
+                    <div class="src-name">NIST — Annonce officielle des nouveaux standards</div>
+                    <div class="src-desc">nist.gov · Août 2024</div>
                 </div>
-                <div class="algo-card dilith">
-                    <div class="ac-badge">Signature</div>
-                    <h3>ML-DSA</h3>
-                    <div class="ac-name">anciennement CRYSTALS-Dilithium</div>
-                    <p>Algorithme de signature numérique. Permet de vérifier l'authenticité et l'intégrité d'un document ou message.</p>
-                    <div class="ac-basis">📐 Réseaux euclidiens (MLWE)</div>
+            </a>
+            <a href="https://www.ssi.gouv.fr/" target="_blank" rel="noreferrer" class="source-item">
+                <div class="src-icon">🇫🇷</div>
+                <div>
+                    <div class="src-name">ANSSI — Recommandations françaises en cybersécurité</div>
+                    <div class="src-desc">ssi.gouv.fr</div>
                 </div>
-                <div class="algo-card falcon">
-                    <div class="ac-badge">Signature</div>
-                    <h3>FN-DSA</h3>
-                    <div class="ac-name">anciennement FALCON</div>
-                    <p>Signature numérique compacte, adaptée aux environnements contraints (IoT, cartes à puce).</p>
-                    <div class="ac-basis">📐 Réseaux NTRU</div>
+            </a>
+            <a href="https://incyber.org/article/nist-publie-trois-algorithmes-chiffrement-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
+                <div class="src-icon">📰</div>
+                <div>
+                    <div class="src-name">InCyber News — Article sur les nouveaux algorithmes</div>
+                    <div class="src-desc">incyber.org · Août 2024</div>
                 </div>
-                <div class="algo-card sphincs">
-                    <div class="ac-badge">Signature</div>
-                    <h3>SLH-DSA</h3>
-                    <div class="ac-name">anciennement SPHINCS+</div>
-                    <p>Signature basée uniquement sur des fonctions de hachage, sans hypothèse sur les réseaux.</p>
-                    <div class="ac-basis">🔁 Fonctions de hachage</div>
+            </a>
+            <a href="https://hellofuture.orange.com/fr/pqc-cryptographie-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
+                <div class="src-icon">🟠</div>
+                <div>
+                    <div class="src-name">Orange — Anticiper la menace quantique</div>
+                    <div class="src-desc">hellofuture.orange.com · 2025</div>
                 </div>
-            </div>
+            </a>
         </div>
-
-        <!-- 3. Chronologie -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">📅</div>
-                <h2>Chronologie des événements clés</h2>
-            </div>
-            <div class="veille-timeline">
-                <div class="vt-item">
-                    <div class="vt-year">2016</div>
-                    <div class="vt-text">Le <strong>NIST lance un appel à candidatures</strong> mondial pour des algorithmes cryptographiques post-quantiques. 82 propositions reçues.</div>
-                </div>
-                <div class="vt-item">
-                    <div class="vt-year">2019 – 2021</div>
-                    <div class="vt-text">Plusieurs tours d'évaluation. Les candidats sont progressivement éliminés. Certains algorithmes sont cassés (ex. SIKE en 2022 par un simple PC).</div>
-                </div>
-                <div class="vt-item">
-                    <div class="vt-year">Juillet 2022</div>
-                    <div class="vt-text">Le NIST annonce <strong>4 finalistes</strong> : CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON et SPHINCS+.</div>
-                </div>
-                <div class="vt-item">
-                    <div class="vt-year">Août 2024</div>
-                    <div class="vt-text">Publication officielle des <strong>premiers standards de cryptographie post-quantique</strong> : ML-KEM, ML-DSA, FN-DSA et SLH-DSA. Étape historique pour la cybersécurité mondiale.</div>
-                </div>
-                <div class="vt-item">
-                    <div class="vt-year">2025 – aujourd'hui</div>
-                    <div class="vt-text">Les agences nationales (ANSSI en France, NSA aux USA) recommandent de <strong>préparer la migration</strong> vers ces nouveaux standards. Les entreprises doivent évaluer leur "crypto-agilité".</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Enjeux -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">🌍</div>
-                <h2>Enjeux et impacts pour les entreprises</h2>
-            </div>
-            <div class="enjeux-grid">
-                <div class="enjeu-card">
-                    <div class="ej-icon">🏦</div>
-                    <h4>Finance &amp; Banque</h4>
-                    <p>Les transactions bancaires et protocoles TLS devront migrer vers des algorithmes post-quantiques pour garantir la confidentialité.</p>
-                </div>
-                <div class="enjeu-card">
-                    <div class="ej-icon">🏥</div>
-                    <h4>Santé</h4>
-                    <p>Les données médicales, particulièrement sensibles, nécessitent une protection à très long terme face aux attaques futures.</p>
-                </div>
-                <div class="enjeu-card">
-                    <div class="ej-icon">🛡️</div>
-                    <h4>Défense &amp; État</h4>
-                    <p>Les communications gouvernementales et militaires sont déjà ciblées par des stratégies de collecte en vue d'un déchiffrement futur.</p>
-                </div>
-                <div class="enjeu-card">
-                    <div class="ej-icon">🌐</div>
-                    <h4>Internet &amp; IoT</h4>
-                    <p>HTTPS, VPN, signatures de certificats... toute l'infrastructure du web devra être mise à jour progressivement.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. Lien avec SISR -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">🎓</div>
-                <h2>Lien avec ma formation BTS SIO SISR</h2>
-            </div>
-            <div class="veille-intro-card">
-                En BTS SIO option SISR, nous étudions l'administration des réseaux, la sécurité des systèmes
-                d'information et la gestion des infrastructures. La cryptographie post-quantique est directement
-                liée à ces domaines :<br><br>
-                • Les <strong>protocoles TLS/HTTPS</strong> que l'on configure sur les serveurs devront intégrer les
-                nouveaux algorithmes post-quantiques.<br>
-                • Les <strong>VPN et tunnels chiffrés</strong> seront impactés : les algorithmes d'échange de clés
-                (comme Diffie-Hellman) sont vulnérables aux ordinateurs quantiques.<br>
-                • La <strong>gestion des certificats PKI</strong> devra évoluer pour supporter ML-DSA ou FN-DSA
-                à la place de RSA.<br><br>
-                Anticiper ces changements dès aujourd'hui, c'est s'assurer d'être un technicien réseau et sécurité
-                compétent dans le monde de demain.
-            </div>
-        </div>
-
-        <!-- 6. Sources -->
-        <div class="veille-section">
-            <div class="veille-section-title">
-                <div class="vst-icon">📚</div>
-                <h2>Sources</h2>
-            </div>
-            <div class="sources-list">
-                <a href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" target="_blank" rel="noreferrer" class="source-item">
-                    <div class="src-icon">🏛️</div>
-                    <div>
-                        <div class="src-name">NIST — Publication officielle des standards PQC</div>
-                        <div class="src-desc">nist.gov · Août 2024</div>
-                    </div>
-                </a>
-                <a href="https://www.ssi.gouv.fr/" target="_blank" rel="noreferrer" class="source-item">
-                    <div class="src-icon">🇫🇷</div>
-                    <div>
-                        <div class="src-name">ANSSI — Agence Nationale de la Sécurité des Systèmes d'Information</div>
-                        <div class="src-desc">ssi.gouv.fr · Recommandations françaises sur la migration PQC</div>
-                    </div>
-                </a>
-                <a href="https://fr.wikipedia.org/wiki/Cryptographie_post-quantique" target="_blank" rel="noreferrer" class="source-item">
-                    <div class="src-icon">📖</div>
-                    <div>
-                        <div class="src-name">Wikipédia — Cryptographie post-quantique</div>
-                        <div class="src-desc">fr.wikipedia.org · Vue d'ensemble des algorithmes et enjeux</div>
-                    </div>
-                </a>
-                <a href="https://incyber.org/article/nist-publie-trois-algorithmes-chiffrement-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
-                    <div class="src-icon">📰</div>
-                    <div>
-                        <div class="src-name">InCyber News — Analyse des 3 algorithmes publiés</div>
-                        <div class="src-desc">incyber.org · Août 2024</div>
-                    </div>
-                </a>
-                <a href="https://hellofuture.orange.com/fr/pqc-cryptographie-post-quantique/" target="_blank" rel="noreferrer" class="source-item">
-                    <div class="src-icon">🟠</div>
-                    <div>
-                        <div class="src-name">Orange Hello Future — PQC, anticiper la menace quantique</div>
-                        <div class="src-desc">hellofuture.orange.com · Décembre 2025</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
     </div>
     <div class="veille-footer-spacer"></div>
 </div>
